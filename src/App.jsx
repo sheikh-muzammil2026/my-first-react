@@ -1,0 +1,122 @@
+
+import './App.css'
+import Todo from './Todo'
+
+function App() {
+ 
+  return (
+    <>
+      <Header></Header>
+      <Main></Main>
+
+      <Device name='Mobile' brand='Iphone'></Device>
+      <Device name='Leptop' brand='HP'></Device>
+      <Device name='Tablet' brand='Sumsung'></Device>
+      <Device name='Desktop' brand='Walton'></Device>
+      
+      <Student></Student>
+    <Developer name="Sakib" language="Java"></Developer>
+    <Developer name="Muhammad" language="Python"></Developer>
+    <Developer name="Abadullah" language="C++"></Developer>
+    <Developer name="Jaber" language="PHP"></Developer>
+
+    <Todo task="Learn React" isDone={true}></Todo>
+    <Todo task="Revise JS" isDone={false}></Todo>
+    <Todo task="Take a shower" isDone={true}></Todo>
+      <Footer></Footer>
+    </>
+  )
+}
+
+
+function Header() {
+  return (
+    <>
+    {/* ক্লাসের 3rd ইউজেস */}
+  <h1 style= {  
+    {
+      textAlign: 'center',
+      color: 'green',
+      textShadow: '2px 2px gray'
+    }
+  }
+  >React notes book</h1>
+  <p>রিয়েক্টের সকল নোটগুলো আমি এখানে লিখে রাখব।</p>
+    </>
+  )
+}
+
+function Main() {
+  return (
+    <div style={{
+      textAlign: 'left'
+    }}>
+    <ul>
+        <li>Any browser | vite.dev | Get Started | npm create vite@latest my-first-app -- --template react | yes |</li>
+        <li>লাইভ দেখার জন্য টার্মিনালে npm run dev কমান্ড দিলে লিঙ্ক চলে আসবে।</li>
+        <li>কম্পোনেন্ট তৈরি করার সময় ফাংশনের রিটার্ন কী এর পরে একাধিক এলিমেন্ট থাকলে খালি ক্লোজিং ও ওপেন ট্যাগ দিতে হয়।  </li>
+      </ul>
+  </div>
+  )
+}
+
+
+function Student() {
+  const name = "sobuj";
+  const mark = 80;
+  return (
+    <div className='card'> {/* ক্লাসের ১ম ইউজেস */}
+    <p>First boy : {name}</p>
+    <p>Total mark : {mark}</p>
+    </div>
+    
+  )
+}
+
+// props এর প্রাথমিক ইউজেস
+function Device(props) {
+  return(
+   <div className='card'> 
+   <Heading></Heading>
+    <h3>Device : {props.name}</h3>
+    <p>Brand :{props.brand}</p>
+   </div>
+  )
+};
+
+function Heading() {
+  return <p>Example of props</p>  
+}
+
+// props কে ডিস্ট্রাকচারিং করেও ইউজ করা যায়। 
+// আগে ডিস্ট্রাকচারিং করা হত এভাবেঃ  {name, language} = {name: 'Sakib', language: 'Python'};
+// কিন্তু এখন শর্ট ফাংশনের প্যারামিটার হিসেবে দিয়ে দিলেই হয় এভাবেঃ  {name, language}
+
+
+function Developer( {name, language}) {
+ 
+  return (
+    <div style={{textAlign: 'left'}}>
+    <h6>All developer information</h6>
+    <p>Developer : {name}</p>
+    <p>Language : {language}</p>
+    </div>
+  )
+}
+
+ {/* class এর ২য় প্রকার ইউজেস */}
+const textColor = {
+  color: 'black',
+  textAlign: 'center',
+  opacity: 0.5
+};
+
+function Footer() {
+  return (
+    <div  className='card'>
+      <p>Follow us in <a href="https://google.com">google.com</a> and <a href="https://youtube.com">youtube.com</a></p>
+      <p style={textColor}>All right is riserved</p>  
+    </div>
+  )
+}
+export default App
