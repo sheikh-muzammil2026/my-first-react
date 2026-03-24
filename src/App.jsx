@@ -2,14 +2,54 @@
 import './App.css'
 import Todo from './Todo'
 import Condition from './6-conditional-way'
+import Maping from './maping'
+import PracticeObject from './object'
+
+
 function App() {
- 
+
+const array = ['salman', 'matobbar', 'anjom', 'miksar'];
+
+const songs = [
+  {
+  id: 1,
+  title: "Hasbi Rabbi",
+  artist: "Sami Yusuf",
+  language: "Arabic",
+  genre: "Nasheed",
+  year: 2005,
+  isPopular: true
+},
+{
+   id: 2,
+  title: "Ya Nabi Salam Alayka",
+  artist: "Maher Zain",
+  language: "Arabic",
+  genre: "Islamic Song",
+  year: 2009,
+  isPopular: true
+},
+{
+   id: 3,
+  title: "Kun Anta",
+  artist: "Humood AlKhudher",
+  language: "Arabic",
+  genre: "Nasheed",
+  year: 2015,
+  isPopular: true
+}
+
+]
+
   return (
     <>
       <Header></Header>
 
       <Main></Main>
-
+     {
+        songs.map(song => <PracticeObject key={song.id} song={song}></PracticeObject>)
+      }
+     
       <Device name='Mobile' brand='Iphone'></Device>
       <Device name='Leptop' brand='HP'></Device>
       <Device name='Tablet' brand='Sumsung'></Device>
@@ -25,14 +65,19 @@ function App() {
       <Todo task="Revise JS" isDone={false}></Todo>
       <Todo task="Take a shower" isDone={true}></Todo>
 
-      <Condition salary={30000} decision="Cancel" ></Condition>
-      <Condition salary= {25000} decision="Will stay" duration={6}></Condition>
+      <Condition salary={30000} decision="Cancel" duration={6} isDone={false}></Condition>
+      <Condition salary= {25000} decision="Will stay" duration={6} isDone={true}></Condition>
      
-      
+     {
+  array.map(arr => <Maping arr={arr}></Maping>)
+      }
+
+     
       <Footer></Footer>
     </>
   )
 }
+
 
 
 function Header() {
