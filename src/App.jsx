@@ -1,12 +1,13 @@
 
 import './App.css'
 import Todo from './Todo'
-
+import Condition from './6-conditional-way'
 function App() {
  
   return (
     <>
       <Header></Header>
+
       <Main></Main>
 
       <Device name='Mobile' brand='Iphone'></Device>
@@ -15,14 +16,19 @@ function App() {
       <Device name='Desktop' brand='Walton'></Device>
       
       <Student></Student>
-    <Developer name="Sakib" language="Java"></Developer>
-    <Developer name="Muhammad" language="Python"></Developer>
-    <Developer name="Abadullah" language="C++"></Developer>
-    <Developer name="Jaber" language="PHP"></Developer>
+      <Developer name="Sakib" language="Java"></Developer>
+      <Developer name="Muhammad" language="Python"></Developer>
+      <Developer name="Abadullah" language="C++"></Developer>
+      <Developer name="Jaber" language="PHP"></Developer>
 
-    <Todo task="Learn React" isDone={true}></Todo>
-    <Todo task="Revise JS" isDone={false}></Todo>
-    <Todo task="Take a shower" isDone={true}></Todo>
+      <Todo task="Learn React" isDone={true}></Todo>
+      <Todo task="Revise JS" isDone={false}></Todo>
+      <Todo task="Take a shower" isDone={true}></Todo>
+
+      <Condition salary={30000} decision="Cancel" ></Condition>
+      <Condition salary= {25000} decision="Will stay" duration={6}></Condition>
+     
+      
       <Footer></Footer>
     </>
   )
@@ -54,7 +60,7 @@ function Main() {
     <ul>
         <li>Any browser | vite.dev | Get Started | npm create vite@latest my-first-app -- --template react | yes |</li>
         <li>লাইভ দেখার জন্য টার্মিনালে npm run dev কমান্ড দিলে লিঙ্ক চলে আসবে।</li>
-        <li>কম্পোনেন্ট তৈরি করার সময় ফাংশনের রিটার্ন কী এর পরে একাধিক এলিমেন্ট থাকলে খালি ক্লোজিং ও ওপেন ট্যাগ দিতে হয়।  </li>
+        <li>কম্পোনেন্ট তৈরি করার সময় ফাংশনের রিটার্ন কী এর পরে একাধিক এলিমেন্ট থাকলে empty ক্লোজিং ও ওপেনিং ট্যাগ দিতে হয়।  </li>
       </ul>
   </div>
   )
