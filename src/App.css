@@ -190,3 +190,39 @@
   margin: 16px;
   text-align: left;
 }
+
+ .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  height: 2rem;
+  min-height: 2rem;
+  padding: 0 1rem;
+  max-width: 125px;
+  margin-right: 8px;
+
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  text-decoration: none;
+
+  background-color: #570df8;
+  color: white;
+
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-primary:hover {
+  background-color: #4506cb;
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}

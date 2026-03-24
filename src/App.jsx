@@ -1,10 +1,11 @@
 
-import './App.css'
-import Todo from './Todo'
-import Condition from './6-conditional-way'
-import Maping from './maping'
-import PracticeObject from './object'
-
+import './App.css';
+import Todo from './Todo';
+import Condition from './6-conditional-way';
+import Maping from './maping';
+import PracticeObject from './object';
+import UseState from './state';
+import GetRuns from './runs'
 
 function App() {
 
@@ -41,14 +42,18 @@ const songs = [
 
 ]
 
+
+
   return (
     <>
       <Header></Header>
 
       <Main></Main>
+      <UseState></UseState>
+      <GetRuns></GetRuns>
      {
         songs.map(song => <PracticeObject key={song.id} song={song}></PracticeObject>)
-      }
+     }
      
       <Device name='Mobile' brand='Iphone'></Device>
       <Device name='Leptop' brand='HP'></Device>
