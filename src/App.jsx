@@ -6,6 +6,8 @@ import Maping from './maping';
 import PracticeObject from './object';
 import UseState from './state';
 import GetRuns from './runs'
+import ShowMessage from './show-hide';
+import Dynamic from './map';
 
 function App() {
 
@@ -77,7 +79,8 @@ const songs = [
   array.map(arr => <Maping arr={arr}></Maping>)
       }
 
-     
+     <ShowMessage></ShowMessage>
+     <Dynamic></Dynamic>
       <Footer></Footer>
     </>
   )

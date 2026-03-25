@@ -26,7 +26,7 @@ export default function UseState() {
     return (
         <div>
         <h3>Count: {count}</h3>
-        <button onClick={handleClick}>Add count</button>
+        <button className="btn-primary"  onClick={handleClick}>Add count</button>
         </div>
     )
 }
