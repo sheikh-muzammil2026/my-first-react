@@ -10,6 +10,7 @@ import ShowMessage from './show-hide';
 import Dynamic from './map';
 import UsersCard from './UsersCard';
 import { Suspense } from 'react';
+import Posts from './assets/2nd-part-note/posts';
 
 
 
@@ -57,13 +58,25 @@ const songs = [
 ]
 
 
+    const fetchPots = async () => {
+        const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+        return res.json();
+    }
+
+    const postsPromises = fetchPots();
+
   return (
     <>
       <Header></Header>
+
       <Suspense fallback={<p>Users data loading...</p>}>
         <UsersCard  userPromises={userPromises}></UsersCard>
       </Suspense>
-      
+
+      <Suspense fallback={<h2>Post loading...</h2>}>
+        <Posts postsPromises={postsPromises} ></Posts>
+      </Suspense>
+
       <Main></Main>
       <UseState></UseState>
       <GetRuns></GetRuns>
