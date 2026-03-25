@@ -8,8 +8,20 @@ import UseState from './state';
 import GetRuns from './runs'
 import ShowMessage from './show-hide';
 import Dynamic from './map';
+import UsersCard from './UsersCard';
+import { Suspense } from 'react';
 
+
+
+  const fetchUsers = async () => {
+        const res = await fetch("https://jsonplaceholder.typicode.com/users");
+      return res.json();
+    }
+   
+   
 function App() {
+
+   const userPromises = fetchUsers();
 
 const array = ['salman', 'matobbar', 'anjom', 'miksar'];
 
@@ -45,11 +57,13 @@ const songs = [
 ]
 
 
-
   return (
     <>
       <Header></Header>
-
+      <Suspense fallback={<p>Users data loading...</p>}>
+        <UsersCard  userPromises={userPromises}></UsersCard>
+      </Suspense>
+      
       <Main></Main>
       <UseState></UseState>
       <GetRuns></GetRuns>
