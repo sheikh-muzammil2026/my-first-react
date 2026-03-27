@@ -14,15 +14,15 @@ import Posts from './assets/2nd-part-note/posts';
 
 
 
-  const fetchUsers = async () => {
-        const res = await fetch("https://jsonplaceholder.typicode.com/users");
-      return res.json();
-    }
+  // const fetchUsers = async () => {
+  //       const res = await fetch("https://jsonplaceholder.typicode.com/users");
+  //     return res.json();
+  //   }
    
    
 function App() {
 
-   const userPromises = fetchUsers();
+  //  const userPromises = fetchUsers();
 
 const array = ['salman', 'matobbar', 'anjom', 'miksar'];
 
@@ -58,24 +58,24 @@ const songs = [
 ]
 
 
-    const fetchPots = async () => {
-        const res = await fetch('https://jsonplaceholder.typicode.com/posts');
-        return res.json();
-    }
+    // const fetchPots = async () => {
+    //     const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+    //     return res.json();
+    // }
 
-    const postsPromises = fetchPots();
+    // const postsPromises = fetchPots();
 
   return (
     <>
       <Header></Header>
 
-      <Suspense fallback={<p>Users data loading...</p>}>
+      {/* <Suspense fallback={<p>Users data loading...</p>}>
         <UsersCard  userPromises={userPromises}></UsersCard>
       </Suspense>
 
       <Suspense fallback={<h2>Post loading...</h2>}>
         <Posts postsPromises={postsPromises} ></Posts>
-      </Suspense>
+      </Suspense> */}
 
       <Main></Main>
       <UseState></UseState>
