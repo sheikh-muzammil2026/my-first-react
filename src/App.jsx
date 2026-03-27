@@ -14,15 +14,15 @@ import Posts from './assets/2nd-part-note/posts';
 
 
 
-  // const fetchUsers = async () => {
-  //       const res = await fetch("https://jsonplaceholder.typicode.com/users");
-  //     return res.json();
-  //   }
+  const fetchUsers = async () => {
+        const res = await fetch("https://jsonplaceholder.typicode.com/users");
+      return res.json();
+    }
    
    
 function App() {
 
-  //  const userPromises = fetchUsers();
+   const userPromises = fetchUsers();
 
 const array = ['salman', 'matobbar', 'anjom', 'miksar'];
 
@@ -58,24 +58,24 @@ const songs = [
 ]
 
 
-    // const fetchPots = async () => {
-    //     const res = await fetch('https://jsonplaceholder.typicode.com/posts');
-    //     return res.json();
-    // }
+    const fetchPots = async () => {
+        const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+        return res.json();
+    }
 
-    // const postsPromises = fetchPots();
+    const postsPromises = fetchPots();
 
   return (
     <>
       <Header></Header>
 
-      {/* <Suspense fallback={<p>Users data loading...</p>}>
+       <Suspense fallback={<p>Users data loading...</p>}>
         <UsersCard  userPromises={userPromises}></UsersCard>
       </Suspense>
 
       <Suspense fallback={<h2>Post loading...</h2>}>
         <Posts postsPromises={postsPromises} ></Posts>
-      </Suspense> */}
+      </Suspense> 
 
       <Main></Main>
       <UseState></UseState>
@@ -141,6 +141,8 @@ function Main() {
         <li>Any browser | vite.dev | Get Started | npm create vite@latest my-first-app -- --template react | yes |</li>
         <li>লাইভ দেখার জন্য টার্মিনালে npm run dev কমান্ড দিলে লিঙ্ক চলে আসবে।</li>
         <li>কম্পোনেন্ট তৈরি করার সময় ফাংশনের রিটার্ন কী এর পরে একাধিক এলিমেন্ট থাকলে empty ক্লোজিং ও ওপেনিং ট্যাগ দিতে হয়।  </li>
+        <li>deploy করাঃ npm run build | upload dist | get your link</li>
+        <li>deploy update: npm run build | upload dist | success</li>
       </ul>
   </div>
   )
