@@ -69,14 +69,7 @@ const songs = [
     <>
       <Header></Header>
 
-       <Suspense fallback={<p>Users data loading...</p>}>
-        <UsersCard  userPromises={userPromises}></UsersCard>
-      </Suspense>
-
-      <Suspense fallback={<h2>Post loading...</h2>}>
-        <Posts postsPromises={postsPromises} ></Posts>
-      </Suspense> 
-
+      
       <Main></Main>
       <UseState></UseState>
       <GetRuns></GetRuns>
@@ -108,6 +101,16 @@ const songs = [
 
      <ShowMessage></ShowMessage>
      <Dynamic></Dynamic>
+
+      <Suspense fallback={<p>Users data loading...</p>}>
+        <UsersCard  userPromises={userPromises}></UsersCard>
+      </Suspense>
+
+      <Suspense fallback={<h2>Post loading...</h2>}>
+        <Posts postsPromises={postsPromises} ></Posts>
+      </Suspense> 
+
+
       <Footer></Footer>
     </>
   )
